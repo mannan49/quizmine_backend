@@ -23,7 +23,7 @@ app.use(morgan("dev"));
 
 // CORS
 const corsOptions = {
-  origin: "https://quizmine-dashboard.vercel.app",
+  origin: ["https://quizmine-dashboard.vercel.app", "http://localhost:3000"],
   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
