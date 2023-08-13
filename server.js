@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 
-const { PORT } = require("./config");
+const { PORT, FRONT_END_URL1, FRONT_END_URL2 } = require("./config");
 const connectDB = require("./config/connectDB");
 
 const app = express();
@@ -23,9 +23,9 @@ app.use(morgan("dev"));
 
 // CORS
 const corsOptions = {
-  origin: "http://quizmine-front.vercel.app",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: "Content-Type,Authorization",
+  origin: [FRONT_END_URL1, FRONT_END_URL2],
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
 app.use(cors(corsOptions));
