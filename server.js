@@ -28,7 +28,7 @@ const corsOptions = {
   allowedHeaders: "Content-Type,Authorization",
   credentials: true,
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the quiz site application." });
