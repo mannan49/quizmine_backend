@@ -22,11 +22,12 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // CORS
-// const corsOptions = {
-//   origin: "http://localhost:3000",
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   allowedHeaders: "Content-Type,Authorization",
-// };
+const corsOptions = {
+  origin: "http://quizmine-front.vercel.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
+  credentials: true,
+};
 app.use(cors());
 
 app.get("/", (req, res) => {
