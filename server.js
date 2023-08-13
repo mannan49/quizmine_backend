@@ -22,13 +22,13 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // CORS
-const corsOptions = {
-  origin: ["https://quizmine-dashboard.vercel.app"],
-  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-};
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: ["https://quizmine-dashboard.vercel.app"],
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the quiz site application." });
