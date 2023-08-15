@@ -20,9 +20,9 @@ router.put("/updateSkill/:id", auth, authorization, updateSkill);
 router.delete("/deleteSkill/:id", auth, authorization, deleteSkill);
 
 // Get all skills route
-router.get("/", auth, getAllSkills);
+router.get("/", getAllSkills);
 
 // Get specific skill route
-router.get("/:id", auth, getSkill);
+router.get("/:id", getSkill);
 
 module.exports = router;

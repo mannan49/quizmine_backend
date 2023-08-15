@@ -23,7 +23,11 @@ app.use(morgan("dev"));
 
 // CORS
 const corsOptions = {
-  origin: ["https://quizmine-dashboard.vercel.app", "http://localhost:3000"],
+  origin: [
+    "https://quizmine-dashboard.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:3001",
+  ],
   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -41,11 +45,13 @@ const skillsRoutes = require("./routes/admin/skillsRoutes");
 const testRoutes = require("./routes/test/testRoutes");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const notesRoutes = require("./routes/admin/notesRoutes");
 app.use("/api/v1/mcqs", mcqsRoutes);
 app.use("/api/v1/skills", skillsRoutes);
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/notes", notesRoutes);
 
 // Middleware for error handling
 const errorMiddleware = require("./middleware/error");
