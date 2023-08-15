@@ -27,6 +27,7 @@ const corsOptions = {
     "https://quizmine-dashboard.vercel.app",
     "http://localhost:3000",
     "http://localhost:3001",
+    "https://quizmine-user.vercel.app",
   ],
   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
   credentials: true,
