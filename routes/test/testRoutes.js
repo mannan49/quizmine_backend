@@ -2,13 +2,13 @@ const auth = require("../../middleware/auth");
 const express = require("express");
 const router = express.Router();
 
-const { setupTest } = require("../../controllers/testController");
-const { result } = require("../../controllers/resultController");
+const { generateTest } = require("../../controllers/testController");
+const { resultController } = require("../../controllers/resultController");
 
 // Setup test route
-router.get("/setuptest", auth, setupTest);
+router.post("/generate-test", generateTest);
 
 // Return result route
-router.post("/returnresult", result);
+router.post("/returnresult", resultController);
 
 module.exports = router;
