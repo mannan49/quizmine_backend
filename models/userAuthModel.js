@@ -11,12 +11,16 @@ const userAuthSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  class: {
-    type: String,
-  },
   password: {
     type: String,
     required: true,
+    validate: {
+      validator: function (value) {
+        // Check if password length is at least 8 characters
+        return value.length >= 8;
+      },
+      message: "Password must be at least 8 characters long",
+    },
   },
   role: String,
 });

@@ -32,7 +32,6 @@ exports.registerUser = async (req, res) => {
       last_name: req.body.last_name,
       email: req.body.email,
       password: hashedPassword,
-      class: req.body.class,
     };
 
     await UserAuth.create(user_info);
